@@ -23,13 +23,14 @@ public class NPCIdleState : BaseState
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         // Transitions
-        // Can see or hear player -> Switch to flee
+        // Can see or hear player -> Switch to flee/chase
         if(npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer)
         {
             npcStateMachine.SwitchToState(npcStateMachine.FleeState);
+             //npcStateMachine.SwitchToState(npcStateMachine.ChaseState);
         }
         // Time is up -> Switch to patrol
-        if(Time.time > leaveTime)
+        if (Time.time > leaveTime)
         {
             npcStateMachine.SwitchToState(npcStateMachine.PatrolState);
         }
