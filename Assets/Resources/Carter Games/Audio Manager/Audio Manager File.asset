@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ae0c8eafd7263429865ae0f6fe29e6, type: 3}
+  m_Name: Audio Manager File
+  m_EditorClassIdentifier: 
+  tabPos: 0
+  audioMixer:
+  - {fileID: 24300002, guid: 3272f04d54fbfc149847aa87f9992ddb, type: 2}
+  soundPrefab: {fileID: 322064603624763291, guid: f97cb5ab9dca8bd488116e0ffc057e10,
+    type: 3}
+  isPopulated: 1
+  directory:
+  - Assets
+  - Assets/GameJam/Audio
+  library:
+  - key: MUSIC_Bossa_Nova_Fun_Fast_Loop
+    value: {fileID: 8300000, guid: 9000ccc06a3ef814a896a7c07798156d, type: 3}
+  - key: MUSIC_Bossa_Nova_Fun_Slow_Loop
+    value: {fileID: 8300000, guid: 308aec2fc22a0734085d5feb03985407, type: 3}
+  - key: MUSIC_Fun_Jazz_Comedy_Energetic_Loop
+    value: {fileID: 8300000, guid: 750a4e997dded914998ef0772a447f27, type: 3}
+  - key: SFX_Magical_Spell_Buff_Small
+    value: {fileID: 8300000, guid: a5fee32dab68a6e4bbc409e8bf291c21, type: 3}
+  - key: SFX_Pop_Designed_Cartoon_Juicy
+    value: {fileID: 8300000, guid: 6798faba04eb3f54dad534582d2d8069, type: 3}
