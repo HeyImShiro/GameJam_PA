@@ -681,7 +681,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 459246242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1207597560}
+        m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
+        m_MethodName: LoadMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &459246242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,7 +895,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 578623766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1207597560}
+        m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &578623766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 705494449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1207597560}
+        m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &705494449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,7 +1898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837387915}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0049879504, y: 0.99501204, z: 0.070616335, w: 0.07028218}
+  m_LocalRotation: {x: -0.0049879523, y: 0.99501204, z: 0.070616335, w: 0.0702822}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2250,6 +2286,7 @@ GameObject:
   - component: {fileID: 1207597558}
   - component: {fileID: 1207597557}
   - component: {fileID: 1207597556}
+  - component: {fileID: 1207597560}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2340,6 +2377,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1207597560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207597555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b995210792b1f924ab735f03ba2ef271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1247060665}
 --- !u!1 &1227877481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,7 +2434,6 @@ GameObject:
   - component: {fileID: 1247060666}
   - component: {fileID: 1247060668}
   - component: {fileID: 1247060667}
-  - component: {fileID: 1247060669}
   m_Layer: 5
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -2452,19 +2501,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247060665}
   m_CullTransparentMesh: 1
---- !u!114 &1247060669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247060665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9367ad222eff7b24da9bc5f95c33ea68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseMenuOverlay: {fileID: 1247060665}
 --- !u!1 &1255366037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,7 +2529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255366037}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005129678, y: 0.994869, z: 0.07060619, w: 0.072279185}
+  m_LocalRotation: {x: -0.0051296796, y: 0.994869, z: 0.07060619, w: 0.0722792}
   m_LocalPosition: {x: -0.5781642, y: 1.23, z: 3.9579954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2909,7 +2945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476174569}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008444147, y: 0.99032533, z: 0.119546995, w: 0.06995115}
+  m_LocalRotation: {x: -0.008444152, y: 0.9903252, z: 0.119546995, w: 0.06995117}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
