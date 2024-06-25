@@ -686,7 +686,7 @@ PrefabInstance:
     - target: {fileID: 2550463727306718371, guid: ff7f04ba9a2dd59418c7a4d384c7e277,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2550463727306718371, guid: ff7f04ba9a2dd59418c7a4d384c7e277,
         type: 3}
@@ -4008,6 +4008,7 @@ GameObject:
   - component: {fileID: 919132147483044060}
   - component: {fileID: 919132147483044059}
   - component: {fileID: 919132147483044061}
+  - component: {fileID: 919132147483044062}
   m_Layer: 0
   m_Name: Agent-Ortiz-Red
   m_TagString: Player
@@ -4074,6 +4075,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &919132147483044062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147483044058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a811b0fd5f42f17449c2f8b5627a9299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 522506151}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1031632035818096701
 Transform:
   m_ObjectHideFlags: 0

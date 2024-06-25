@@ -395,8 +395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToStartFrom: 0
   timeToLoopAt: 0
-  musicTrack: {fileID: 8300000, guid: 308aec2fc22a0734085d5feb03985407, type: 3}
-  mixer: {fileID: 24300002, guid: 3272f04d54fbfc149847aa87f9992ddb, type: 2}
+  musicTrack: {fileID: 8300000, guid: fb22540bf1b903046b168fa189decf9b, type: 3}
+  mixer: {fileID: 0}
   shouldLoop: 1
   playOnAwake: 1
   volume: 1
@@ -1898,7 +1898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837387915}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.004987951, y: 0.99501204, z: 0.070616335, w: 0.07028218}
+  m_LocalRotation: {x: -0.0049879523, y: 0.99501204, z: 0.070616335, w: 0.0702822}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2529,7 +2529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255366037}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005129678, y: 0.994869, z: 0.07060619, w: 0.072279185}
+  m_LocalRotation: {x: -0.0051296796, y: 0.994869, z: 0.07060619, w: 0.0722792}
   m_LocalPosition: {x: -0.5781642, y: 1.23, z: 3.9579954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 2044123465}
-  ClipToPlay: SFX_Pop_Designed_Cartoon_Juicy
+  ClipToPlay: SFX_Animal_Bird_Tweet_1
 --- !u!1 &1476174569
 GameObject:
   m_ObjectHideFlags: 3
@@ -2945,7 +2945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476174569}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008444149, y: 0.99032533, z: 0.119546995, w: 0.069951154}
+  m_LocalRotation: {x: -0.008444146, y: 0.99032533, z: 0.11954699, w: 0.069951154}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

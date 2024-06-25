@@ -36,6 +36,15 @@ public class NPCPatrolState : BaseState
             targetPosition = GetNextWaypoint();
             npcStateMachine.SwitchToState(npcStateMachine.IdleState);
         }
+
+        // Transitions
+        // Can see player -> Switch to Hide
+        if (npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer)
+        {
+            npcStateMachine.SwitchToState(npcStateMachine.HideState);
+        }
+
+
     }
     public override void OnExitState(BaseStateMachine controller)
     {

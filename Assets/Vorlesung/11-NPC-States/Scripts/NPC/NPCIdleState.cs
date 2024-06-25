@@ -13,7 +13,6 @@ public class NPCIdleState : BaseState
     {
         Debug.Log("NPCIdleState:OnEnterState");
 
-
         leaveTime = Time.time + UnityEngine.Random.Range(MinWaitTime, MaxWaitTime);
     }
 
