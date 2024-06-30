@@ -29,7 +29,7 @@ public class NPCPatrolState : BaseState
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         // Transitions
-        // NPC reached waypoint? -> Switch to idle
+        // NPC reached waypoint? -> Switch to Idle
         float sqrtDistance = (npcStateMachine.transform.position - targetPosition).sqrMagnitude;
         if(sqrtDistance < 0.1f)
         {
@@ -38,10 +38,22 @@ public class NPCPatrolState : BaseState
         }
 
         // Transitions
-        // Can see player -> Switch to Hide
+        // Can see player -> Switch state
         if (npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer)
         {
-            npcStateMachine.SwitchToState(npcStateMachine.HideState);
+            if (npcStateMachine.personalityIndex == 1)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.FleeState);
+            }
+            else if (npcStateMachine.personalityIndex == 2)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.HideState);
+            }
+            else if (npcStateMachine.personalityIndex == 3)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.ChaseState);
+            }
+
         }
 
 

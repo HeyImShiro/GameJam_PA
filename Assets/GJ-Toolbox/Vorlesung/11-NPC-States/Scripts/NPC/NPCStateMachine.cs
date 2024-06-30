@@ -10,6 +10,12 @@ public class NPCStateMachine : BaseStateMachine
     public bool CanSeePlayer { get => _eyes.IsDetecting; }  
     public bool CanHearPlayer { get => _ears.IsDetecting; }
 
+    // Modifies NPC behaviour when it detects a Player 
+    // 1 = Flee
+    // 2 = Hide
+    // 3 = Chase
+    public int personalityIndex;
+
     public NPCIdleState IdleState;
     public NPCPatrolState PatrolState;
     public NPCFleeState FleeState;
@@ -49,7 +55,7 @@ public class NPCStateMachine : BaseStateMachine
     // Tick wird jedes Frame aufgerufen um z.B. den Animator zu synchronisieren
     public override void Tick()
     {   
-         _animator.SetFloat("speed", _agent.velocity.magnitude);
+         //_animator.SetFloat("speed", _agent.velocity.magnitude);
     }
 
     public void SetDestination(Vector3 destination)

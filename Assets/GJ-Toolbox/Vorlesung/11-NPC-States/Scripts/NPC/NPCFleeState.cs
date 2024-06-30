@@ -5,20 +5,22 @@ using UnityEngine;
 public class NPCFleeState : BaseState
 {
     public float FleeDistance;
+    public float fleeSpeedMultiplier;
+
     private Vector3 _fleePosition;
+
     public override void OnEnterState(BaseStateMachine controller)
     {
         Debug.Log("NPCFleeState:OnEnterState");
-        NPCStateMachine nPCStateMachine = controller as NPCStateMachine;
+        NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         // Calculate the position to which you want to flee
-       // _fleePosition = (nPCStateMachine.transform.position - nPCStateMachine.PlayerPosition).normalized + FleeDistance +     // HIER FEHLT NOCH WAS
-       // + nPCStateMachine.transform.position;
+        _fleePosition = (npcStateMachine.transform.position - npcStateMachine.PlayerPosition).normalized * FleeDistance
+        + npcStateMachine.transform.position;
 
         // Move to the calculated position
-        nPCStateMachine.SetDestination(_fleePosition);
-        nPCStateMachine.SetAgentSpeedMultiplier(2.5f);
-
+        npcStateMachine.SetDestination(_fleePosition);
+        npcStateMachine.SetAgentSpeedMultiplier(fleeSpeedMultiplier);
 
     }
 
