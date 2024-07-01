@@ -4,33 +4,33 @@
 /// </summary>
 public class Ears : Sense
 {
-    private SimplePlayerController _playerController;
+    private SimplePlayerController playerController;
 
     protected override void Start()
     {
         base.Start();
 
-        _playerController = _player.GetComponent<SimplePlayerController>();
+        playerController = player.GetComponent<SimplePlayerController>();
     }
 
     protected override void Update()
     {
         base.Update();
 
-        if(IsInRange() && _playerController.IsAudible) 
+        if(IsInRange() && playerController.isAudible) 
         {
-            IsDetecting = true;
+            isDetecting = true;
         }
         else
         {
-            IsDetecting = false;
+            isDetecting = false;
         }
     }
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        SenseGizmos.DrawRangeDisc(HeadReferenceTransform.position, transform.up, Range);
+        SenseGizmos.DrawRangeDisc(headReferenceTransform.position, transform.up, range);
     }
 #endif
 }

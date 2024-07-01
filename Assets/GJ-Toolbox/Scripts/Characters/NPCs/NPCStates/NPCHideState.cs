@@ -7,15 +7,15 @@ public class NPCHideState : BaseState
     
     public Transform[] HidingSpots;
 
-    private Vector3 _targetPosition;
+    private Vector3 targetPosition;
 
     public override void OnEnterState(BaseStateMachine controller)
     {
         Debug.Log("NPCHideState:OnEnterState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
-        _targetPosition = GetNearestHidingSpot(npcStateMachine.transform.position);
-        npcStateMachine.SetDestination(_targetPosition);
+        targetPosition = GetNearestHidingSpot(npcStateMachine.transform.position);
+        npcStateMachine.SetDestination(targetPosition);
         npcStateMachine.SetAgentSpeedMultiplier(2.5f);
         
     }
@@ -27,7 +27,7 @@ public class NPCHideState : BaseState
 
         // Transitions
         // NPC reached waypoint? -> Switch to Idle
-        float sqrtDistance = (npcStateMachine.transform.position - _targetPosition).sqrMagnitude;
+        float sqrtDistance = (npcStateMachine.transform.position - targetPosition).sqrMagnitude;
         Debug.Log("dist: " + sqrtDistance);
 
         if (sqrtDistance < 3f)

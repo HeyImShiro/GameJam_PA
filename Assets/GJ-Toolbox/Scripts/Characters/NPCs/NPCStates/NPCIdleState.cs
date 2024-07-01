@@ -4,8 +4,8 @@ using UnityEngine;
 [Serializable]
 public class NPCIdleState : BaseState
 {
-    public float MinWaitTime;
-    public float MaxWaitTime;
+    public float minWaitTime;
+    public float maxWaitTime;
 
     private float leaveTime;
 
@@ -13,7 +13,7 @@ public class NPCIdleState : BaseState
     {
         Debug.Log("NPCIdleState:OnEnterState");
 
-        leaveTime = Time.time + UnityEngine.Random.Range(MinWaitTime, MaxWaitTime);
+        leaveTime = Time.time + UnityEngine.Random.Range(minWaitTime, maxWaitTime);
     }
 
     public override void OnUpdateState(BaseStateMachine controller)
@@ -23,7 +23,7 @@ public class NPCIdleState : BaseState
 
         // Transitions
         // Can see or hear player -> Switch state
-        if(npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer)
+        if(npcStateMachine.canSeePlayer || npcStateMachine.canHearPlayer)
         {
             if(npcStateMachine.personalityIndex == 1)
             {

@@ -1334,8 +1334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personalityIndex: 1
   IdleState:
-    MinWaitTime: 3
-    MaxWaitTime: 5
+    minWaitTime: 3
+    maxWaitTime: 5
   PatrolState:
     Waypoints:
     - {fileID: 257303303}
@@ -1345,7 +1345,7 @@ MonoBehaviour:
     - {fileID: 1334920892}
     - {fileID: 1631157947}
   FleeState:
-    FleeDistance: 10
+    fleeDistance: 10
     fleeSpeedMultiplier: 2.5
   ChaseState:
     maxChaseDistance: 40
@@ -1588,6 +1588,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1721408067}
     m_Modifications:
+    - target: {fileID: 443542694050284084, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 443542694050284084, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: headReferenceTransform
+      value: 
+      objectReference: {fileID: 1926225916}
     - target: {fileID: 1958771699556117406, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: range
@@ -1620,9 +1630,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
+      propertyPath: fov
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
       propertyPath: DetectionLayer.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: detectionLayer.m_Bits
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: headReferenceTransform
+      value: 
+      objectReference: {fileID: 1926225916}
     - target: {fileID: 8465449182766249289, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: target
@@ -1948,6 +1978,12 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!4 &1522157339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8465449183201777401, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927902505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1530722437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3138182405344321554, guid: ff7f04ba9a2dd59418c7a4d384c7e277,
@@ -2601,6 +2637,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767188071}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1876197469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8465449183177095108, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8465449184087998553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1925417035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,6 +2726,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925417035}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1926225916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8465449183177095108, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405247799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1927902505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2692,11 +2740,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1721408067}
     m_Modifications:
+    - target: {fileID: 443542694050284084, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 443542694050284084, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: headReferenceTransform
+      value: 
+      objectReference: {fileID: 1522157339}
     - target: {fileID: 1958771699556117406, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1974189831}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: fov
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: detectionLayer.m_Bits
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: headReferenceTransform
+      value: 
+      objectReference: {fileID: 1522157339}
     - target: {fileID: 8465449182766249289, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: target
@@ -2795,8 +2873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personalityIndex: 2
   IdleState:
-    MinWaitTime: 3
-    MaxWaitTime: 5
+    minWaitTime: 3
+    maxWaitTime: 5
   PatrolState:
     Waypoints:
     - {fileID: 1674872346}
@@ -2804,7 +2882,7 @@ MonoBehaviour:
     - {fileID: 169136627}
     - {fileID: 478904653}
   FleeState:
-    FleeDistance: 10
+    fleeDistance: 10
     fleeSpeedMultiplier: 2.5
   ChaseState:
     maxChaseDistance: 40
@@ -2883,8 +2961,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personalityIndex: 3
   IdleState:
-    MinWaitTime: 3
-    MaxWaitTime: 5
+    minWaitTime: 3
+    maxWaitTime: 5
   PatrolState:
     Waypoints:
     - {fileID: 725092352}
@@ -2892,7 +2970,7 @@ MonoBehaviour:
     - {fileID: 1430043078}
     - {fileID: 1767188072}
   FleeState:
-    FleeDistance: 10
+    fleeDistance: 10
     fleeSpeedMultiplier: 2.5
   ChaseState:
     maxChaseDistance: 40
@@ -3156,11 +3234,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1721408067}
     m_Modifications:
+    - target: {fileID: 443542694050284084, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 443542694050284084, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: headReferenceTransform
+      value: 
+      objectReference: {fileID: 1876197469}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: fov
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: DetectionLayer.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: detectionLayer.m_Bits
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763091366070915749, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: headReferenceTransform
+      value: 
+      objectReference: {fileID: 1876197469}
     - target: {fileID: 8465449184688182681, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: m_LocalPosition.x

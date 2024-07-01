@@ -6,36 +6,36 @@ using UnityEngine;
 public class SimplePlayerController : MonoBehaviour
 {
     // how fast the character can move
-    public float MaxMovementSpeed;
+    public float maxMovementSpeed;
 
     // how fast the character can turn
-    public float RotationSpeed;
+    public float rotationSpeed;
 
     // How far in m the distance check work
-    public float GroundCheckDistance = 0.1f;
+    public float groundCheckDistance = 0.1f;
 
     // Influence the gravity 
-    public float GravityMultiplier = 1f;
+    public float gravityMultiplier = 1f;
 
     // Is character audible (moving fast)
-    public bool IsAudible { get; private set; }
+    public bool isAudible { get; private set; }
 
     // Component to move character
-    private CharacterController _characterController;
+    private CharacterController characterController;
 
     // Cache the camera transform
-    private Transform _cameraTransform;    
+    private Transform cameraTransform;    
 
     // How fast the charakter moves to the ground (gravity speed)
-    private float _ySpeed;
+    private float ySpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        _ySpeed = 0;
-        _cameraTransform = Camera.main.transform;
+        ySpeed = 0;
+        cameraTransform = Camera.main.transform;
 
-        _characterController = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -57,25 +57,25 @@ public class SimplePlayerController : MonoBehaviour
         float speed = shouldWalk ? inputMagnitude * 0.333f : inputMagnitude;        
 
         // Make movement direction depend on camera rotation
-        movementDirection = Quaternion.AngleAxis(_cameraTransform.rotation.eulerAngles.y, Vector3.up)
+        movementDirection = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up)
             * movementDirection;
         
         // Rotate the character to movement direction
         if (movementDirection != Vector3.zero)
         {
             Quaternion targetCharacterRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, RotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, rotationSpeed * Time.deltaTime);
         }
 
         // Calculate gravity
-        _ySpeed = IsGrounded() ? _ySpeed = 0 : _ySpeed += Physics.gravity.y * GravityMultiplier * Time.deltaTime;
-        movementDirection.y = _ySpeed;
+        ySpeed = IsGrounded() ? ySpeed = 0 : ySpeed += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
+        movementDirection.y = ySpeed;
 
         // Move the character        
-        _characterController.Move(movementDirection * speed * MaxMovementSpeed * Time.deltaTime);
+        characterController.Move(movementDirection * speed * maxMovementSpeed * Time.deltaTime);
 
         // Character is audible, when moving fast
-        IsAudible = speed >= 0.5f;
+        isAudible = speed >= 0.5f;
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public class SimplePlayerController : MonoBehaviour
     /// <returns>True if the raycasts hit smthg. in distance</returns>
     private bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, _characterController.height * 0.5f + GroundCheckDistance);
+        return Physics.Raycast(transform.position, Vector3.down, characterController.height * 0.5f + groundCheckDistance);
     }
 
     /// <summary>
@@ -92,9 +92,9 @@ public class SimplePlayerController : MonoBehaviour
     /// </summary>
     private void OnDrawGizmos()
     {
-        if(_characterController!=null)
+        if(characterController!=null)
         {
-            Debug.DrawRay(transform.position, Vector3.down * (_characterController.height * 0.5f + GroundCheckDistance), IsGrounded() ? Color.cyan : Color.red);
+            Debug.DrawRay(transform.position, Vector3.down * (characterController.height * 0.5f + groundCheckDistance), IsGrounded() ? Color.cyan : Color.red);
         }        
     }
 }

@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &308587206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &444825315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6110912969429623931, guid: 03cf86d490dbada4085926266db9b862,
@@ -2366,7 +2366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &554878583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,7 +3031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!43 &746993057
 Mesh:
   m_ObjectHideFlags: 0
@@ -3384,9 +3384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db73b57d198ad149b90d7896d7d0b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroundcheckDistance: 0.1
-  GravityMultiplier: 3
-  ForceStrength: 250
+  groundcheckDistance: 0.1
+  gravityMultiplier: 5
+  forceStrength: 100
 --- !u!114 &807482222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3399,7 +3399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d638f683db569b43b389e8e5f7c01ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValueToCollect: 15
+  itemValueToCollect: 10
   collectedItemsLabel: {fileID: 125015535}
 --- !u!43 &818430886
 Mesh:
@@ -4291,7 +4291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &1174074750
 GameObject:
   m_ObjectHideFlags: 3
@@ -5354,7 +5354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &1370657266
 GameObject:
   m_ObjectHideFlags: 3
@@ -5805,7 +5805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &1532027257
 GameObject:
   m_ObjectHideFlags: 0
@@ -6473,7 +6473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &1707097769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6603,59 +6603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a053639deb63d0b4fb683947a6e98a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationCurve:
+  animationCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.4982159
-      value: 0.99744016
-      inSlope: 0.93265224
-      outSlope: 0.016865017
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.65
-      value: 1
-      inSlope: 0.016865017
-      outSlope: 0.0036497165
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9
-      value: 0
-      inSlope: -2.0661085
-      outSlope: 0
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -0
-      outSlope: 0
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
-    m_PostInfinity: 0
+    m_PostInfinity: 2
     m_RotationOrder: 4
-  Duration: 45
-  PlayOnStart: 0
+  duration: 3
+  playOnStart: 1
 --- !u!65 &1732984415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7395,7 +7350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1001 &1963641304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7534,7 +7489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 5
+  itemValue: 1
 --- !u!1 &1974568727
 GameObject:
   m_ObjectHideFlags: 0
@@ -7715,7 +7670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemValue: 1
+  itemValue: 1
 --- !u!1 &2075604708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7780,50 +7735,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a053639deb63d0b4fb683947a6e98a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationCurve:
+  animationCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.15
-      value: 0
-      inSlope: -0
-      outSlope: 1.2285738
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.85
-      value: 1
-      inSlope: 0.96552634
-      outSlope: 0
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
-    m_PostInfinity: 0
+    m_PostInfinity: 2
     m_RotationOrder: 4
-  Duration: 20
-  PlayOnStart: 1
+  duration: 3
+  playOnStart: 1
 --- !u!65 &2075604713
 BoxCollider:
   m_ObjectHideFlags: 0

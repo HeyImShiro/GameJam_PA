@@ -13,22 +13,19 @@ public class NavMeshAgentController : MonoBehaviour
 
     public LayerMask layerMask;
 
-    private NavMeshAgent _agent;
-
-    private Camera _rayCamera;
-
-    private Animator _animator;
-
-    private int _speedParameterHash;
+    private NavMeshAgent agent;
+    private Camera rayCamera;
+    private Animator animator;
+    private int speedParameterHash;
 
     // Start is called before the first frame update
     void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
-        _rayCamera = Camera.main;
-        _animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        rayCamera = Camera.main;
+        animator = GetComponent<Animator>();
 
-        _speedParameterHash = Animator.StringToHash("speed");
+        speedParameterHash = Animator.StringToHash("speed");
     }
 
     // Update is called once per frame
@@ -37,7 +34,7 @@ public class NavMeshAgentController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = _rayCamera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = rayCamera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask))
             {
@@ -48,13 +45,13 @@ public class NavMeshAgentController : MonoBehaviour
                     target.position = raycastHit.point;
 
                     // Agent folgt dem Target
-                    _agent.SetDestination(target.position);
+                    agent.SetDestination(target.position);
                 }
             }
         }
 
         // Blendtree Parameter auf Geschwindigkeit von NavMesh Agent setzen
-        _animator.SetFloat(_speedParameterHash, _agent.velocity.magnitude);
+        animator.SetFloat(speedParameterHash, agent.velocity.magnitude);
 
     }
 }

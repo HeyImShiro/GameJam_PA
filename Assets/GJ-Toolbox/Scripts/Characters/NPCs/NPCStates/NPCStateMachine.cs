@@ -6,9 +6,9 @@ using UnityEngine.AI;
 
 public class NPCStateMachine : BaseStateMachine
 {
-    public Vector3 PlayerPosition { get => _player.position; }
-    public bool CanSeePlayer { get => _eyes.IsDetecting; }  
-    public bool CanHearPlayer { get => _ears.IsDetecting; }
+    public Vector3 playerPosition { get => player.position; }
+    public bool canSeePlayer { get => eyes.isDetecting; }  
+    public bool canHearPlayer { get => ears.isDetecting; }
 
     // Modifies NPC behaviour when it detects a Player 
     // 1 = Flee
@@ -22,14 +22,14 @@ public class NPCStateMachine : BaseStateMachine
     public NPCChaseState ChaseState;
     public NPCHideState HideState;
     
-    private Eyes _eyes;
-    private Ears _ears;
+    private Eyes eyes;
+    private Ears ears;
 
-    private Transform _player;
-    private NavMeshAgent _agent;
-    private Animator _animator;
+    private Transform player;
+    private NavMeshAgent agent;
+    private Animator animator;
 
-    private float _initialAgentSpeed;
+    private float initialAgentSpeed;
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
@@ -40,13 +40,13 @@ public class NPCStateMachine : BaseStateMachine
 
     public override void Initialize()
     {
-        _eyes = GetComponentInChildren<Eyes>();
-        _ears = GetComponentInChildren<Ears>();
+        eyes = GetComponentInChildren<Eyes>();
+        ears = GetComponentInChildren<Ears>();
 
-        _player = GameObject.Find("Player").transform;
-        _agent = GetComponent<NavMeshAgent>();
-        _initialAgentSpeed = _agent.speed;
-        _animator = GetComponent<Animator>();
+        player = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        initialAgentSpeed = agent.speed;
+        animator = GetComponent<Animator>();
         
         CurrentState = IdleState;
         CurrentState.OnEnterState(this);
@@ -60,12 +60,12 @@ public class NPCStateMachine : BaseStateMachine
 
     public void SetDestination(Vector3 destination)
     {
-        _agent.SetDestination(destination);
+        agent.SetDestination(destination);
     }
 
     public void SetAgentSpeedMultiplier(float multiplier)
     {
-        _agent.speed = _initialAgentSpeed * multiplier;
+        agent.speed = initialAgentSpeed * multiplier;
     }
 
 }

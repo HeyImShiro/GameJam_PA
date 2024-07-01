@@ -22,9 +22,9 @@ public class NPCChaseState : BaseState
         Debug.Log("NPCChaseState:OnUpdateState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
-        npcStateMachine.SetDestination(npcStateMachine.PlayerPosition);
+        npcStateMachine.SetDestination(npcStateMachine.playerPosition);
 
-        distanceToPlayer = (npcStateMachine.PlayerPosition - npcStateMachine.transform.position).sqrMagnitude;
+        distanceToPlayer = (npcStateMachine.playerPosition - npcStateMachine.transform.position).sqrMagnitude;
         
         // Transition
         // If player is too far away -> Switch to Idle

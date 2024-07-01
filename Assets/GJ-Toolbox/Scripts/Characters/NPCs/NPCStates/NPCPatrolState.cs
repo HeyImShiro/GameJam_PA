@@ -7,7 +7,6 @@ public class NPCPatrolState : BaseState
     public Transform[] Waypoints;
 
     private int currentWaypointIndex;
-
     private Vector3 targetPosition;
 
     public override void OnEnterState(BaseStateMachine controller)
@@ -39,7 +38,7 @@ public class NPCPatrolState : BaseState
 
         // Transitions
         // Can see player -> Switch state
-        if (npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer)
+        if (npcStateMachine.canSeePlayer || npcStateMachine.canHearPlayer)
         {
             if (npcStateMachine.personalityIndex == 1)
             {

@@ -4,40 +4,40 @@ using Cinemachine;
 public class MovingPlatform : MonoBehaviour
 {
     // Get nice curve in inspector to control animation
-    public AnimationCurve AnimationCurve;
+    public AnimationCurve animationCurve;
 
     // How long does it take to sample the curve
-    public float Duration = 3f;
+    public float duration = 3f;
 
     // Play form the beginning
-    public bool PlayOnStart = true;
+    public bool playOnStart = true;
 
     // Elapse time
-    private float _progress;
+    private float progress;
 
     // Moves the platform via cinemachin
-    private CinemachineDollyCart _chart;
+    private CinemachineDollyCart chart;
 
     // Update the position of the platform?
-    private bool _isMoving;
+    private bool isMoving;
 
     // Start is called before the first frame update
     void Start()
     {
-        _chart = GetComponent<CinemachineDollyCart>();
-        _isMoving = PlayOnStart;
+        chart = GetComponent<CinemachineDollyCart>();
+        isMoving = playOnStart;
     }
 
     void FixedUpdate()
     {
-        if (_isMoving)
+        if (isMoving)
         {
             // Take the duration for sampling into account
-            _progress += Time.deltaTime / Duration;
+            progress += Time.deltaTime / duration;
 
             // Normalize value for position (0 - 1)
-            float position = AnimationCurve.Evaluate(_progress) % Duration;
-            _chart.m_Position = position;
+            float position = animationCurve.Evaluate(progress) % duration;
+            chart.m_Position = position;
         }
     }
 
@@ -46,7 +46,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            _isMoving = true;
+            isMoving = true;
             other.transform.SetParent(transform);
         }        
     }

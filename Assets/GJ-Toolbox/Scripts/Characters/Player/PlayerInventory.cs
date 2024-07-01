@@ -4,17 +4,17 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     // how many items to collect?
-    public int ItemValueToCollect = 10;
+    public int itemValueToCollect = 10;
 
     // Textfield to display collected items
     public TextMeshProUGUI collectedItemsLabel;
 
     // Already collected items
-    public int CollectedItemsValue { get; private set; }
+    public int collectedItemsValue { get; private set; }
 
     void Start()
     {
-        CollectedItemsValue = 0;
+        collectedItemsValue = 0;
         // Anzahl der Items in der Szene suchen?
         // CollectedItemsValue = GameObject.FindObjectsOfType<Item>().Length;
 
@@ -23,12 +23,12 @@ public class PlayerInventory : MonoBehaviour
 
     public void ItemCollected(int itemValue) 
     {
-        CollectedItemsValue += itemValue;
+        collectedItemsValue += itemValue;
         UpdateHUD();
     }
 
     private void UpdateHUD() 
     {
-        collectedItemsLabel.text = CollectedItemsValue + "/" + ItemValueToCollect;
+        collectedItemsLabel.text = collectedItemsValue + "/" + itemValueToCollect;
     }
 }
