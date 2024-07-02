@@ -5,23 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 { 
-    public static bool gameIsPaused = false;
 
     public GameObject gameOverUI;
 
 
-
-    void Pause()
+    private void OnEnable()
     {
-        gameOverUI.SetActive(true);
-        Time.timeScale = 0f;
-        gameIsPaused = true;
-        Cursor.lockState = CursorLockMode.None;
+        
     }
+
 
     public void LoadMenu()
     {
-        gameIsPaused = false;
+        PauseScript.gameIsPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }

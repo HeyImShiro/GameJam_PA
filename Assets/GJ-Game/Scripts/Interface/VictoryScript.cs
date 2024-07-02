@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class VictoryScript : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    
 
     public GameObject victoryUI;
 
@@ -15,13 +15,13 @@ public class VictoryScript : MonoBehaviour
     {
         victoryUI.SetActive(true);
         Time.timeScale = 0f;
-        gameIsPaused = true;
+        PauseScript.gameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void LoadMenu()
     {
-        gameIsPaused = false;
+        PauseScript.gameIsPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }

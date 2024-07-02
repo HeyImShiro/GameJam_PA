@@ -11,6 +11,8 @@ public class CheeseSize : MonoBehaviour
     public float shrinkIntervall;
     public float shrinkAmount;
 
+    public GameObject gameOverScreen;
+
     [SerializeField] private bool indicatorActive;
     private Material shader;
 
@@ -31,6 +33,15 @@ public class CheeseSize : MonoBehaviour
         {
             transform.localScale *= shrinkAmount;
             timer = 0f;
+        }
+
+        //Lose Condition
+        if(transform.localScale.x <= minSize)
+        {
+            gameOverScreen.SetActive(true); 
+            Time.timeScale = 0f;
+            PauseScript.gameIsPaused = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
 

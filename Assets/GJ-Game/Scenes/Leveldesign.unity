@@ -10068,6 +10068,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1250497175181108866, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 1397156247}
+    - target: {fileID: 1250497175181108866, guid: 119a2f3ed906ddc42afc6df600b7b114,
+        type: 3}
       propertyPath: shrinkIntervall
       value: 3
       objectReference: {fileID: 0}
