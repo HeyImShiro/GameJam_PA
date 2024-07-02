@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CheeseWheelController : MonoBehaviour
+{
+    public float speed;
+    public float rotationSpeed;
+
+    private Rigidbody rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Store inputs
+        
+        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
+        /*
+        rb.velocity = verticalInput * speed * Time.deltaTime * transform.right;
+        rb.velocity = horizontalInput * speed * Time.deltaTime * transform.up;
+        */
+
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            //rb.AddForce(-transform.up * speed);
+            //transform.rotation.eulerAngles += rotationSpeed * horizontalInput;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            //rb.AddForce(transform.up * speed);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
+        }
+
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            rb.AddForce(transform.right * speed);
+        }
+        else if (Input.GetAxis("Vertical") < 0)
+        {
+            rb.AddForce(-transform.right * speed);
+        }
+
+
+    }
+
+    private void LateUpdate()
+    {
+        transform.localEulerAngles = new Vector3(90, transform.localEulerAngles.y, transform.localEulerAngles.z);
+    }
+
+
+}
