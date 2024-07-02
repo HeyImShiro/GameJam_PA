@@ -7,6 +7,7 @@ public class CheeseWheelController : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public float jumpStrength;
+    public float kickStrength;
 
     public Transform gimbal;
 
@@ -80,5 +81,15 @@ public class CheeseWheelController : MonoBehaviour
             isGrounded = true;
             Debug.Log("is Grounded reset");
         }
+
+        if (collision.gameObject.CompareTag("NPC") && collision.gameObject.GetComponent<Animator>().GetBool("isWalking") )
+        {
+            rb.AddForce((transform.position - collision.transform.position).normalized * kickStrength);
+        }
+
+
     }
+
+
+
 }

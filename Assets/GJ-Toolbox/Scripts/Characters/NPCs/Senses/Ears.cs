@@ -4,6 +4,7 @@
 /// </summary>
 public class Ears : Sense
 {
+    /*
     private SimplePlayerController playerController;
 
     protected override void Start()
@@ -33,4 +34,5 @@ public class Ears : Sense
         SenseGizmos.DrawRangeDisc(headReferenceTransform.position, transform.up, range);
     }
 #endif
+    */
 }
