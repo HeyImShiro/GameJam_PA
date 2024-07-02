@@ -60,7 +60,7 @@ public class CheeseWheelController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(-transform.forward * jumpStrength);
+            rb.AddForce(Vector3.up * jumpStrength);
             isGrounded = false;
         }
 
