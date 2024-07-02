@@ -8,13 +8,15 @@ public class NPCPatrolState : BaseState
 
     private int currentWaypointIndex;
     private Vector3 targetPosition;
+    
 
     public override void OnEnterState(BaseStateMachine controller)
     {
         Debug.Log("NPCPatrolState:OnEnterState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
+        npcStateMachine.animator.SetBool("isWalking", true); 
 
-        if(targetPosition == Vector3.zero)
+        if (targetPosition == Vector3.zero)
         {
             targetPosition = Waypoints[0].position;
         }
@@ -60,6 +62,9 @@ public class NPCPatrolState : BaseState
     public override void OnExitState(BaseStateMachine controller)
     {
         Debug.Log("NPCPatrolState:OnExitState");
+        NPCStateMachine npcStateMachine = controller as NPCStateMachine;
+
+        npcStateMachine.animator.SetBool("isWalking", false);
     }
 
     public Vector3 GetNextWaypoint()

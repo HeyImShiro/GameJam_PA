@@ -27,7 +27,7 @@ public class NPCStateMachine : BaseStateMachine
 
     private Transform player;
     private NavMeshAgent agent;
-    private Animator animator;
+    public Animator animator;
 
     private float initialAgentSpeed;
 
