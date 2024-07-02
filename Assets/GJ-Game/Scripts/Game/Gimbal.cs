@@ -17,7 +17,7 @@ public class Gimbal : MonoBehaviour
     void Update()
     {
         transform.position = playerTransform.position;
-        Debug.Log(playerTransform.localEulerAngles.y);
+        //Debug.Log(playerTransform.localEulerAngles.y);
         transform.eulerAngles = new Vector3(0 ,playerTransform.localEulerAngles.y ,0);
     }
 }

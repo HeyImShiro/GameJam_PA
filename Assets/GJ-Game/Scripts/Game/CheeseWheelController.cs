@@ -6,13 +6,16 @@ public class CheeseWheelController : MonoBehaviour
 {
     public float speed;
     public float rotationSpeed;
+    public float jumpStrength;
 
     private Rigidbody rb;
+    private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -49,6 +52,13 @@ public class CheeseWheelController : MonoBehaviour
         }
 
 
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(-transform.forward * jumpStrength);
+            isGrounded = false;
+        }
+
+
     }
 
     private void LateUpdate()
@@ -56,5 +66,13 @@ public class CheeseWheelController : MonoBehaviour
         transform.localEulerAngles = new Vector3(90, transform.localEulerAngles.y, transform.localEulerAngles.z);
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (Physics.Raycast(gameObject.transform.position, Vector3.down))
+        {
+            isGrounded = true;
+            Debug.Log("is Grounded reset");
+        }
+    }
 }
