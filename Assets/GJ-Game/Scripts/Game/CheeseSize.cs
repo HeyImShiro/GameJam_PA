@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,7 +53,8 @@ public class CheeseSize : MonoBehaviour
 
     public void ChangeSize(float change)
     {
-        float changedSize = transform.localScale.x + ((maxSize - minSize) * (1 + change));
+        float changedSize = transform.localScale.x + ((maxSize - minSize) * change);
+        changedSize = Mathf.Clamp(changedSize, minSize, maxSize);
         transform.localScale = new Vector3(changedSize, changedSize, changedSize);
     }
 }
