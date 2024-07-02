@@ -18,6 +18,6 @@ public class Gimbal : MonoBehaviour
     {
         transform.position = playerTransform.position;
         //Debug.Log(playerTransform.localEulerAngles.y);
-        transform.eulerAngles = new Vector3(0 ,playerTransform.localEulerAngles.y ,0);
+        //transform.eulerAngles = new Vector3(0 ,playerTransform.localEulerAngles.y ,0);
     }
 }

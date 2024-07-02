@@ -8,6 +8,8 @@ public class CheeseWheelController : MonoBehaviour
     public float rotationSpeed;
     public float jumpStrength;
 
+    public Transform gimbal;
+
     private Rigidbody rb;
     private bool isGrounded = true;
 
@@ -34,21 +36,25 @@ public class CheeseWheelController : MonoBehaviour
         {
             //rb.AddForce(-transform.up * speed);
             //transform.rotation.eulerAngles += rotationSpeed * horizontalInput;
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
+            //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
+            //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+            gimbal.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
             //rb.AddForce(transform.up * speed);
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
+            //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
+            //transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
+            gimbal.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
         }
 
         if (Input.GetAxis("Vertical") > 0)
         {
-            rb.AddForce(transform.right * speed);
+            rb.AddForce(gimbal.right * speed);
         }
         else if (Input.GetAxis("Vertical") < 0)
         {
-            rb.AddForce(-transform.right * speed);
+            rb.AddForce(-gimbal.right * speed);
         }
 
 
@@ -63,7 +69,7 @@ public class CheeseWheelController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.localEulerAngles = new Vector3(90, transform.localEulerAngles.y, transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(0, gimbal.localEulerAngles.y, transform.localEulerAngles.z);
     }
 
     private void OnCollisionEnter(Collision collision)
