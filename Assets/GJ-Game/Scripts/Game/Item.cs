@@ -21,9 +21,16 @@ public class Item : MonoBehaviour
             {
                 other.GetComponent<CheeseSize>().ChangeSize(cheeseSizeIncrease);
             }
-
-            Destroy(gameObject);
+            gameObject.GetComponent<AudioSource>().Play();
+            StartCoroutine("DestroyDelay");
         }
 
     }
+
+    IEnumerator DestroyDelay()
+    {
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length);
+        Destroy(gameObject);
+    }
+
 }
