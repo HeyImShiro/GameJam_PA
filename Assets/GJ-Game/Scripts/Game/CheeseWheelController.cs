@@ -13,6 +13,7 @@ public class CheeseWheelController : MonoBehaviour
     public Transform gimbal;
 
     public GameObject impactEffect;
+    public GameObject cheeseDrop;
 
     private Rigidbody rb;
     private bool isGrounded = true;
@@ -88,7 +89,7 @@ public class CheeseWheelController : MonoBehaviour
         {
             isGrounded = true;
             Debug.Log("is Grounded reset");
-            Instantiate(impactEffect, transform.position - new Vector3(0, sphereCol.radius, 0), Quaternion.identity);
+            Instantiate(impactEffect, transform.position - new Vector3(0, sphereCol.radius * transform.localScale.x, 0), Quaternion.identity);
         }
 
         // NPC Kick
@@ -99,6 +100,7 @@ public class CheeseWheelController : MonoBehaviour
             //Kick
             rb.AddForce((transform.position - collision.transform.position).normalized * kickStrength);
             //Spawn Cheese Part
+            Instantiate(cheeseDrop, transform.position, Quaternion.identity);
         }
 
 
