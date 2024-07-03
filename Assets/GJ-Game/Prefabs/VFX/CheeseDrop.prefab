@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8776223323939108079}
   - component: {fileID: 8868445589710048407}
   - component: {fileID: 9124600825239461676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CheeseDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
