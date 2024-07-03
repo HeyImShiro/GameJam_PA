@@ -18,7 +18,6 @@ public class CheeseWheelController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
@@ -28,17 +27,20 @@ public class CheeseWheelController : MonoBehaviour
         
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
+
         /*
         rb.velocity = verticalInput * speed * Time.deltaTime * transform.right;
         rb.velocity = horizontalInput * speed * Time.deltaTime * transform.up;
         */
 
+        // Character Movement
         if(Input.GetAxis("Horizontal") > 0)
         {
             //rb.AddForce(-transform.up * speed);
             //transform.rotation.eulerAngles += rotationSpeed * horizontalInput;
             //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
             //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+
             gimbal.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
         else if (Input.GetAxis("Horizontal") < 0)
@@ -46,6 +48,7 @@ public class CheeseWheelController : MonoBehaviour
             //rb.AddForce(transform.up * speed);
             //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
             //transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
+
             gimbal.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
         }
 
@@ -58,30 +61,31 @@ public class CheeseWheelController : MonoBehaviour
             rb.AddForce(-gimbal.right * speed);
         }
 
-
+        // Jump
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpStrength);
             isGrounded = false;
         }
 
-
     }
 
     private void LateUpdate()
     {
+        // Prevent falling over
         transform.localEulerAngles = new Vector3(0, gimbal.localEulerAngles.y, transform.localEulerAngles.z);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        // IsGrounded Reset
         if (Physics.Raycast(gameObject.transform.position, Vector3.down))
         {
             isGrounded = true;
             Debug.Log("is Grounded reset");
         }
 
+        // NPC Kick
         if (collision.gameObject.CompareTag("NPC") && collision.gameObject.GetComponent<Animator>().GetBool("isWalking") )
         {
             rb.AddForce((transform.position - collision.transform.position).normalized * kickStrength);

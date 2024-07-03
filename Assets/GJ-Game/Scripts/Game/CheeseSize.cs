@@ -27,7 +27,7 @@ public class CheeseSize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Shrink
+        // Shrink
         timer += Time.deltaTime;
         if(timer >= shrinkIntervall && transform.localScale.x >= minSize)
         {
@@ -35,7 +35,7 @@ public class CheeseSize : MonoBehaviour
             timer = 0f;
         }
 
-        //Lose Condition
+        // Lose Condition
         if(transform.localScale.x <= minSize)
         {
             gameOverScreen.SetActive(true); 
@@ -48,7 +48,7 @@ public class CheeseSize : MonoBehaviour
         //Activate Indicator when too small
         if(transform.localScale.x <= minSize + ((maxSize - minSize) * 0.2) && !indicatorActive)
         {
-            //Activate Indicator Effect
+            // Activate Indicator Effect
             shader.SetFloat("_BlinkActive", 1);
             indicatorActive = true;
         }
@@ -56,7 +56,7 @@ public class CheeseSize : MonoBehaviour
         //Deactivate Indicator when not too small
         if(transform.localScale.x >= minSize + ((maxSize - minSize) * 0.2) && indicatorActive)
         {
-            //Deactivate IndicatorEffect
+            // Deactivate IndicatorEffect
             shader.SetFloat("_BlinkActive", 0);
             indicatorActive = false;
         }
