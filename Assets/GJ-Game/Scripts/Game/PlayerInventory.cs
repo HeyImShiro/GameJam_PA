@@ -7,6 +7,8 @@ public class PlayerInventory : MonoBehaviour
     public CollectibleSpawns collectibleManager;
     public int itemValueToCollect = 10;
 
+    public GameObject victoryScreen;
+
     // Textfield to display collected items
     public TextMeshProUGUI collectedItemsLabel;
 
@@ -31,5 +33,10 @@ public class PlayerInventory : MonoBehaviour
     private void UpdateHUD() 
     {
         collectedItemsLabel.text = collectedItemsValue + "/" + collectibleManager.anzahlSchmuck;
+        if(collectedItemsValue == collectibleManager.anzahlSchmuck)
+        {
+            victoryScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
