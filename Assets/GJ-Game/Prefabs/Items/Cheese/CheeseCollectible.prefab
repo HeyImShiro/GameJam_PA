@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemValue: 0
-  cheeseSizeIncrease: 0.1
+  cheeseSizeIncrease: 0.2
   isCheese: 1
 --- !u!135 &3973155536814040995
 SphereCollider:

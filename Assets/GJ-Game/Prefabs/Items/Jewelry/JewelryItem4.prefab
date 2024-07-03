@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5318988865438596336}
   - component: {fileID: 5380339731170134515}
   - component: {fileID: 6921853922499634101}
+  - component: {fileID: -5305701173960343607}
   m_Layer: 0
   m_Name: JewelryItem4
   m_TagString: Untagged
@@ -106,6 +107,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.08
   m_Center: {x: 0.0000012042001, y: 0.01359734, z: -0.00000007171184}
+--- !u!114 &-5305701173960343607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953513182583115014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemValue: 1
+  cheeseSizeIncrease: 0
+  isCheese: 0
 --- !u!1001 &5286870793404866977
 PrefabInstance:
   m_ObjectHideFlags: 0

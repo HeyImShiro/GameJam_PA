@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8187696014559699075}
   - component: {fileID: 3266093566438073346}
   - component: {fileID: 4269058758675755982}
+  - component: {fileID: -8262581086327058873}
   m_Layer: 0
   m_Name: JewelryNecklace1
   m_TagString: Untagged
@@ -106,6 +107,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1962326
   m_Center: {x: -0.00926372, y: 0.0119181005, z: 0.032289937}
+--- !u!114 &-8262581086327058873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628544535788779277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemValue: 1
+  cheeseSizeIncrease: 0
+  isCheese: 0
 --- !u!1001 &2653520864823986489
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8652037653479514959}
   - component: {fileID: 6789494234087308975}
   - component: {fileID: 8259182444828847787}
+  - component: {fileID: -6262080975952534466}
   m_Layer: 0
   m_Name: CheeseCollectible2
   m_TagString: Untagged
@@ -106,6 +107,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.2
   m_Center: {x: 0.06311136, y: -0.0000000037252903, z: 0.000000007450581}
+--- !u!114 &-6262080975952534466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285600105412324799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemValue: 0
+  cheeseSizeIncrease: 0.2
+  isCheese: 1
 --- !u!1001 &7166858475930794073
 PrefabInstance:
   m_ObjectHideFlags: 0

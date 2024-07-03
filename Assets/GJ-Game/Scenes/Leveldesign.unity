@@ -19787,17 +19787,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c4b83f4ec5b4040af2e6e2a49f19d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anzahlSchmuck: 10
+  anzahlSchmuck: 5
   jewelrySpawnParent: {fileID: 545053413}
   jewelryPrefabs:
   - {fileID: 1669769457835133920, guid: b39da4f52ad6602409d43dfeb103a808, type: 3}
   - {fileID: 5967949785293941401, guid: dc44ee192bc1c6c4eb3ab204c00299bc, type: 3}
   - {fileID: 2147701904187495536, guid: cdc6c3742b900b9438282d4068d83af6, type: 3}
-  anzahlCheese: 10
+  - {fileID: 1953513182583115014, guid: fc998b2fcdcdd3a49bed6a1694dfcc0d, type: 3}
+  - {fileID: 4628544535788779277, guid: 2a7698437d976b54da4396c791d4e755, type: 3}
+  - {fileID: 7040081392140692140, guid: 82cfd36cff7d577439eb3de1f593e66e, type: 3}
+  - {fileID: 2492465221012341328, guid: b7ebfa7226869f04da54e0804051b475, type: 3}
+  anzahlCheese: 8
   cheeseSpawnParent: {fileID: 1001860985}
   cheesePrefabs:
   - {fileID: 3696567121520120948, guid: d81bc6f3a6182dd4aaf5f02a5f926c58, type: 3}
-  - {fileID: 3696567121520120948, guid: d81bc6f3a6182dd4aaf5f02a5f926c58, type: 3}
+  - {fileID: 2285600105412324799, guid: 921fd7a2236180d45a37195ce60fe488, type: 3}
 --- !u!1001 &1554337373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22515,6 +22519,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1250497175181108866, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
+      propertyPath: maxSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250497175181108866, guid: 119a2f3ed906ddc42afc6df600b7b114,
+        type: 3}
       propertyPath: shrinkAmount
       value: 0.95
       objectReference: {fileID: 0}
@@ -22806,7 +22815,7 @@ PrefabInstance:
     - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
       propertyPath: speed
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
@@ -22816,13 +22825,18 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
+      propertyPath: jumpStrength
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
+        type: 3}
       propertyPath: kickStrength
-      value: 400
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
       propertyPath: kickSizeReduction
-      value: -0.2
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
