@@ -11,13 +11,17 @@ public class CheeseWheelController : MonoBehaviour
 
     public Transform gimbal;
 
+    public GameObject impactEffect;
+
     private Rigidbody rb;
     private bool isGrounded = true;
+    private SphereCollider sphereCol;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sphereCol = gameObject.GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -83,6 +87,7 @@ public class CheeseWheelController : MonoBehaviour
         {
             isGrounded = true;
             Debug.Log("is Grounded reset");
+            Instantiate(impactEffect, transform.position - new Vector3(0, sphereCol.radius, 0), Quaternion.identity);
         }
 
         // NPC Kick

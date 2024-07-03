@@ -22,6 +22,7 @@ public class CheeseSize : MonoBehaviour
     void Start()
     {
         shader = GetComponentInChildren<Renderer>().material;
+
     }
 
     // Update is called once per frame
@@ -64,8 +65,11 @@ public class CheeseSize : MonoBehaviour
 
     public void ChangeSize(float change)
     {
+        //Scale
         float changedSize = transform.localScale.x + ((maxSize - minSize) * change);
         changedSize = Mathf.Clamp(changedSize, minSize, maxSize);
         transform.localScale = new Vector3(changedSize, changedSize, changedSize);
+
+
     }
 }
