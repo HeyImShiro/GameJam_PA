@@ -14,7 +14,13 @@ public class GameOver : MonoBehaviour
         
     }
 
+    public void retry()
+    {
+        PauseScript.gameIsPaused = false;
+        SceneManager.LoadScene(1);
 
+        Time.timeScale = 1f;
+    }
     public void LoadMenu()
     {
         PauseScript.gameIsPaused = false;
