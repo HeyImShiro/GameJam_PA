@@ -41,7 +41,7 @@ public class CollectibleSpawns : MonoBehaviour
         for (int i = 0; i < anzahlCheese; i++)
         {
             int spawnLocationIndex = Random.Range(0, cheeseSpawnListe.Count);
-            Instantiate(cheesePrefabs[Random.Range(0, jewelryPrefabs.Count)], cheeseSpawnListe[spawnLocationIndex].position, jewelrySpawnListe[spawnLocationIndex].rotation);
+            Instantiate(cheesePrefabs[Random.Range(0, cheesePrefabs.Count)], cheeseSpawnListe[spawnLocationIndex].position, cheeseSpawnListe[spawnLocationIndex].rotation);
             cheeseSpawnListe.RemoveAt(spawnLocationIndex);
         }
     }

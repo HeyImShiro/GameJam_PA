@@ -119,6 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548192e357089847b448bd1f607b707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemValue: 1
+  itemValue: 0
   cheeseSizeIncrease: 0.1
   isCheese: 1
