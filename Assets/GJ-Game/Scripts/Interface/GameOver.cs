@@ -19,7 +19,6 @@ public class GameOver : MonoBehaviour
         PauseScript.gameIsPaused = false;
         SceneManager.LoadScene(1);
 
-        Time.timeScale = 1f;
     }
     public void LoadMenu()
     {

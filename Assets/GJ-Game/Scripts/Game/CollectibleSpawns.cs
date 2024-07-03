@@ -19,6 +19,9 @@ public class CollectibleSpawns : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+
         Transform[] jewelryTransforms = jewelrySpawnParent.GetComponentsInChildren<Transform>();
         Transform[] cheeseTransforms = cheeseSpawnParent.GetComponentsInChildren<Transform>();
 
