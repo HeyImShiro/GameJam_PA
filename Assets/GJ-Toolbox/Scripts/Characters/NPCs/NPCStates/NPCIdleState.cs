@@ -23,6 +23,7 @@ public class NPCIdleState : BaseState
 
         // Transitions
         // Can see or hear player -> Switch state
+        /*
         if(npcStateMachine.canSeePlayer || npcStateMachine.canHearPlayer)
         {
             if(npcStateMachine.personalityIndex == 1)
@@ -39,6 +40,7 @@ public class NPCIdleState : BaseState
             }
             
         }
+        */
         // Time is up -> Switch to patrol
         if (Time.time > leaveTime)
         {

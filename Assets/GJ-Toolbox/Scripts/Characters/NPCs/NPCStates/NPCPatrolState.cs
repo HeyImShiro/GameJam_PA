@@ -40,6 +40,7 @@ public class NPCPatrolState : BaseState
 
         // Transitions
         // Can see player -> Switch state
+        /*
         if (npcStateMachine.canSeePlayer || npcStateMachine.canHearPlayer)
         {
             if (npcStateMachine.personalityIndex == 1)
@@ -56,7 +57,7 @@ public class NPCPatrolState : BaseState
             }
 
         }
-
+        */
 
     }
     public override void OnExitState(BaseStateMachine controller)
