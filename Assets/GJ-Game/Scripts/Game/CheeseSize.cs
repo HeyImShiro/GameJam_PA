@@ -66,7 +66,8 @@ public class CheeseSize : MonoBehaviour
     public void ChangeSize(float change)
     {
         //Scale
-        float changedSize = transform.localScale.x + ((maxSize - minSize) * change);
+        float oldSize = transform.localScale.x;
+        float changedSize = oldSize + change;
         changedSize = Mathf.Clamp(changedSize, minSize, maxSize);
         transform.localScale = new Vector3(changedSize, changedSize, changedSize);
 
