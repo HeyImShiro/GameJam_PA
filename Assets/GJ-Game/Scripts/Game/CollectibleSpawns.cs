@@ -5,11 +5,13 @@ using UnityEngine;
 public class CollectibleSpawns : MonoBehaviour
 {
     public int anzahlSchmuck;
-    public List<Vector3> schmuckSpawnListe;
-    public List<GameObject> schmuckPrefabs;
+    public GameObject jewelrySpawnParent;
+    private List<Transform> jewelrySpawnListe = new List<Transform>();
+    public List<GameObject> jewelryPrefabs;
 
     public int anzahlCheese;
-    public List<Vector3> cheeseSpawnListe;
+    public GameObject cheeseSpawnParent;
+    private List<Transform> cheeseSpawnListe = new List<Transform>();
     public List<GameObject> cheesePrefabs;
 
 
@@ -17,14 +19,30 @@ public class CollectibleSpawns : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Transform[] jewelryTransforms = jewelrySpawnParent.GetComponentsInChildren<Transform>();
+        Transform[] cheeseTransforms = cheeseSpawnParent.GetComponentsInChildren<Transform>();
+
+        foreach (Transform item in jewelryTransforms)
+        {
+            jewelrySpawnListe.Add(item);
+        }
+        foreach (Transform item in cheeseTransforms)
+        {
+            cheeseSpawnListe.Add(item);
+        }
+
         for (int i = 0; i < anzahlSchmuck; i++)
         {
-            Instantiate(schmuckPrefabs[Random.Range(0, schmuckPrefabs.Count + 1)], schmuckSpawnListe[Random.Range(0, schmuckSpawnListe.Count + 1)], Quaternion.identity);
+            int spawnLocationIndex = Random.Range(0, jewelrySpawnListe.Count);
+            Instantiate(jewelryPrefabs[Random.Range(0, jewelryPrefabs.Count)], jewelrySpawnListe[spawnLocationIndex].position, jewelrySpawnListe[spawnLocationIndex].rotation);
+            jewelrySpawnListe.RemoveAt(spawnLocationIndex);
         }
 
         for (int i = 0; i < anzahlCheese; i++)
         {
-            Instantiate(cheesePrefabs[Random.Range(0, schmuckPrefabs.Count + 1)], cheeseSpawnListe[Random.Range(0, schmuckSpawnListe.Count + 1)], Quaternion.identity);
+            int spawnLocationIndex = Random.Range(0, cheeseSpawnListe.Count);
+            Instantiate(cheesePrefabs[Random.Range(0, jewelryPrefabs.Count)], cheeseSpawnListe[spawnLocationIndex].position, jewelrySpawnListe[spawnLocationIndex].rotation);
+            cheeseSpawnListe.RemoveAt(spawnLocationIndex);
         }
     }
 
