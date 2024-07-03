@@ -8,6 +8,7 @@ public class CheeseWheelController : MonoBehaviour
     public float rotationSpeed;
     public float jumpStrength;
     public float kickStrength;
+    public float kickSizeReduction;
 
     public Transform gimbal;
 
@@ -93,7 +94,11 @@ public class CheeseWheelController : MonoBehaviour
         // NPC Kick
         if (collision.gameObject.CompareTag("NPC") && collision.gameObject.GetComponent<Animator>().GetBool("isWalking") )
         {
+            //Reduce Size
+            gameObject.GetComponent<CheeseSize>().ChangeSize(kickSizeReduction);
+            //Kick
             rb.AddForce((transform.position - collision.transform.position).normalized * kickStrength);
+            //Spawn Cheese Part
         }
 
 
