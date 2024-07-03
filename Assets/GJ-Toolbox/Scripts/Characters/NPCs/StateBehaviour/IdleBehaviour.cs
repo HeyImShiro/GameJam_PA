@@ -5,6 +5,7 @@ public class IdleBehaviour : StateMachineBehaviour
     // Time to wait before change the state
     public float minWaitTime;
     public float maxWaitTime;
+    public int numberOfBoredStates;
 
     private float nextStateChangeTime;
 
@@ -19,7 +20,7 @@ public class IdleBehaviour : StateMachineBehaviour
     {
         if(Time.time > nextStateChangeTime) 
         {
-            int randomIndex = Random.Range(1, 4);
+            int randomIndex = Random.Range(1, numberOfBoredStates + 1);
             animator.SetInteger("boredIndex", randomIndex);
 
             nextStateChangeTime = Time.time + Random.Range(minWaitTime, maxWaitTime);

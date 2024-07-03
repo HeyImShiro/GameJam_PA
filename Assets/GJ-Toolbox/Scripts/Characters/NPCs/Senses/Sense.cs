@@ -26,11 +26,13 @@ public abstract class Sense : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
     }
-
+    
+    
     protected virtual void Update()
     {
-        directionToPlayer = player.transform.position - headReferenceTransform.position;
+       // directionToPlayer = player.transform.position - headReferenceTransform.position;
     }
+    
 
     // Player in range?
     public bool IsInRange()
