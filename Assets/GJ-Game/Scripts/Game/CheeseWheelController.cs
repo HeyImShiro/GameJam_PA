@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheeseWheelController : MonoBehaviour
 {
     public float speed;
+    public float speedBoostMultiplier;
     public float rotationSpeed;
     public float jumpStrength;
     public float kickStrength;
@@ -72,6 +73,16 @@ public class CheeseWheelController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpStrength);
             isGrounded = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            speed *= speedBoostMultiplier;
+        }
+
+        if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            speed /= speedBoostMultiplier;
         }
 
     }
