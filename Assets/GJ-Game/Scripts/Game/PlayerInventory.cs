@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     // how many items to collect?
+    public CollectibleSpawns collectibleManager;
     public int itemValueToCollect = 10;
 
     // Textfield to display collected items
@@ -29,6 +30,6 @@ public class PlayerInventory : MonoBehaviour
 
     private void UpdateHUD() 
     {
-        collectedItemsLabel.text = collectedItemsValue + "/" + itemValueToCollect;
+        collectedItemsLabel.text = collectedItemsValue + "/" + collectibleManager.anzahlSchmuck;
     }
 }
