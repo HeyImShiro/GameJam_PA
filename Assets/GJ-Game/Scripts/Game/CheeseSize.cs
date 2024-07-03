@@ -13,6 +13,8 @@ public class CheeseSize : MonoBehaviour
 
     public GameObject gameOverScreen;
 
+    public AudioClip defeatAudio;
+
     [SerializeField] private bool indicatorActive;
     private Material shader;
 
@@ -39,10 +41,17 @@ public class CheeseSize : MonoBehaviour
         // Lose Condition
         if(transform.localScale.x <= minSize)
         {
-            gameOverScreen.SetActive(true); 
+            if (!gameOverScreen.activeSelf)
+            {
+                gameObject.GetComponent<AudioSource>().PlayOneShot(defeatAudio);
+            }
+
+            gameOverScreen.SetActive(true);
             Time.timeScale = 0f;
             PauseScript.gameIsPaused = true;
             Cursor.lockState = CursorLockMode.None;
+
+
         }
 
 

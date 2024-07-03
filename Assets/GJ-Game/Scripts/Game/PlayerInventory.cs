@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     public int itemValueToCollect = 10;
 
     public GameObject victoryScreen;
+    public AudioClip victorySound;
 
     // Textfield to display collected items
     public TextMeshProUGUI collectedItemsLabel;
@@ -36,6 +37,7 @@ public class PlayerInventory : MonoBehaviour
         if(collectedItemsValue == collectibleManager.anzahlSchmuck)
         {
             victoryScreen.SetActive(true);
+            gameObject.GetComponent<AudioSource>().PlayOneShot(victorySound);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
         }

@@ -22,6 +22,9 @@ public class Item : MonoBehaviour
                 other.GetComponent<CheeseSize>().ChangeSize(cheeseSizeIncrease);
             }
             gameObject.GetComponent<AudioSource>().Play();
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+            gameObject.GetComponent<Renderer>().enabled = false;
+            Destroy(transform.GetChild(0).gameObject);
             StartCoroutine("DestroyDelay");
         }
 
