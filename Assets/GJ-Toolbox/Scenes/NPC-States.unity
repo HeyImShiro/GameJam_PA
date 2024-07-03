@@ -1101,6 +1101,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Chr_Prince_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4761957460812876345, guid: 5e0fe9f83751b5148a1fa84cc69e776c,
+        type: 3}
+      propertyPath: PatrolState.Waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761957460812876345, guid: 5e0fe9f83751b5148a1fa84cc69e776c,
+        type: 3}
+      propertyPath: PatrolState.Waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 725092352}
+    - target: {fileID: 4761957460812876345, guid: 5e0fe9f83751b5148a1fa84cc69e776c,
+        type: 3}
+      propertyPath: PatrolState.Waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1431698416}
+    - target: {fileID: 4761957460812876345, guid: 5e0fe9f83751b5148a1fa84cc69e776c,
+        type: 3}
+      propertyPath: PatrolState.Waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1430043078}
+    - target: {fileID: 4761957460812876345, guid: 5e0fe9f83751b5148a1fa84cc69e776c,
+        type: 3}
+      propertyPath: PatrolState.Waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1767188072}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2930,6 +2955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerCheese
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
+        type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9192649586516624744, guid: 119a2f3ed906ddc42afc6df600b7b114,
         type: 3}
