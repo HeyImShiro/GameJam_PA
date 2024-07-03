@@ -60,11 +60,11 @@ public class CheeseWheelController : MonoBehaviour
 
         if (Input.GetAxis("Vertical") > 0)
         {
-            rb.AddForce(gimbal.right * speed);
+            rb.AddForce(gimbal.right * speed * Time.deltaTime);
         }
         else if (Input.GetAxis("Vertical") < 0)
         {
-            rb.AddForce(-gimbal.right * speed);
+            rb.AddForce(-gimbal.right * speed * Time.deltaTime);
         }
 
         // Jump
