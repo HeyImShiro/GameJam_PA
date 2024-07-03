@@ -37,6 +37,7 @@ public class PlayerInventory : MonoBehaviour
         {
             victoryScreen.SetActive(true);
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
