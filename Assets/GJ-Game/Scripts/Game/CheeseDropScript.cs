@@ -35,7 +35,7 @@ public class CheeseDropScript : MonoBehaviour
         //Initiate Self destructs
         StartCoroutine("WaitTilDestruct");
         //Create Cheese
-        Instantiate(cheesePiece, collision.contacts[0].point, Quaternion.identity);
+        Instantiate(cheesePiece, collision.contacts[0].point + new Vector3(0, 0.1f, 0), Quaternion.identity);
 
     }
 
