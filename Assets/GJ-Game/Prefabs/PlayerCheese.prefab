@@ -772,7 +772,7 @@ Transform:
   m_GameObject: {fileID: 6758287491264889162}
   serializedVersion: 2
   m_LocalRotation: {x: 0.26819754, y: -0.3624778, z: 0.109749466, w: 0.88579625}
-  m_LocalPosition: {x: -33.430504, y: 8.253172, z: 35.794724}
+  m_LocalPosition: {x: -21.491901, y: -0.33500004, z: -0.27838898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   cheeseDrop: {fileID: 4143293033627967328, guid: 29a868f353ac85c4e831036bb111d3f1,
     type: 3}
   kickAudio: {fileID: 8300000, guid: bf5b1cb7795dd754a94b90c321a1fad6, type: 3}
-  boostTrail: {fileID: 0}
+  boostTrail: {fileID: 7419500963019902429}
 --- !u!114 &4439808282806265414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,6 +1639,12 @@ PrefabInstance:
 --- !u!4 &6152354900289497147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4089979860834620232, guid: 7ce7a19b2d0880545ba13f0cd6e785b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7900168259887905651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &7419500963019902429 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 816371973869762222, guid: 7ce7a19b2d0880545ba13f0cd6e785b7,
     type: 3}
   m_PrefabInstance: {fileID: 7900168259887905651}
   m_PrefabAsset: {fileID: 0}
