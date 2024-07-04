@@ -17,6 +17,8 @@ public class CheeseWheelController : MonoBehaviour
     public GameObject cheeseDrop;
     public AudioClip kickAudio;
 
+    public TrailRenderer boostTrail;
+
     private Rigidbody rb;
     private bool isGrounded = true;
     private SphereCollider sphereCol;
@@ -79,11 +81,14 @@ public class CheeseWheelController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             speed *= speedBoostMultiplier;
+            boostTrail.emitting = true;
+
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             speed /= speedBoostMultiplier;
+            boostTrail.emitting = false;
         }
 
     }
