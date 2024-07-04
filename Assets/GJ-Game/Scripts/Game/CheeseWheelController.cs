@@ -92,8 +92,8 @@ public class CheeseWheelController : MonoBehaviour
         // IsGrounded Reset
         if (Physics.Raycast(gameObject.transform.position, Vector3.down))
         {
+            //Debug.Log("is Grounded reset");
             isGrounded = true;
-            Debug.Log("is Grounded reset");
             Instantiate(impactEffect, transform.position - new Vector3(0, sphereCol.radius * transform.localScale.x, 0), Quaternion.identity);
         }
 
