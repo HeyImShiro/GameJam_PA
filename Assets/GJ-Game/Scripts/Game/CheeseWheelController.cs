@@ -15,6 +15,7 @@ public class CheeseWheelController : MonoBehaviour
 
     public GameObject impactEffect;
     public GameObject cheeseDrop;
+    public AudioClip kickAudio;
 
     private Rigidbody rb;
     private bool isGrounded = true;
@@ -110,6 +111,8 @@ public class CheeseWheelController : MonoBehaviour
             gameObject.GetComponent<CheeseSize>().ChangeSize(kickSizeReduction);
             //Kick
             rb.AddForce((transform.position - collision.transform.position).normalized * kickStrength);
+            //Play Kick Audio
+            gameObject.GetComponent<AudioSource>().PlayOneShot(kickAudio);
             //Spawn Cheese Part
             Instantiate(cheeseDrop, transform.position, Quaternion.identity);
         }
