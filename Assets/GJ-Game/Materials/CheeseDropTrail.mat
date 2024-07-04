@@ -58,5 +58,5 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _TilingOffsetTex: {r: -0.89, g: 2.31, b: -0.54, a: 0.87}
+    - _TilingOffsetTex: {r: -0.89, g: 2.31, b: -0.68, a: 0.87}
   m_BuildTextureStacks: []
