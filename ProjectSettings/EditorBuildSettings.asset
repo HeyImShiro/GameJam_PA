@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GJ-Game/Scenes/Leveldesign.unity
     guid: 4bb2a11028e5c3340baf07e762fc5dc6
-  - enabled: 1
-    path: Assets/GJ-Game/Scenes/CharacterTestScene.unity
-    guid: 07d80c4d59d1c154e9eb39eb6b272c55
   m_configObjects: {}
