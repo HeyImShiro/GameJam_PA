@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-	public GameObject introScreen;
 
     private void Start()
     {
@@ -26,7 +25,7 @@ public class MainMenu : MonoBehaviour
 
 	IEnumerator StartDialog()
 	{
-		yield return new WaitForSeconds(15f);
+		yield return new WaitForSeconds(12f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
