@@ -55,7 +55,7 @@ public class CheeseSize : MonoBehaviour
         }
 
 
-        //Activate Indicator when too small
+        // Activate Indicator when too small
         if(transform.localScale.x <= minSize + ((maxSize - minSize) * 0.2) && !indicatorActive)
         {
             // Activate Indicator Effect
@@ -63,7 +63,7 @@ public class CheeseSize : MonoBehaviour
             indicatorActive = true;
         }
 
-        //Deactivate Indicator when not too small
+        // Deactivate Indicator when not too small
         if(transform.localScale.x >= minSize + ((maxSize - minSize) * 0.2) && indicatorActive)
         {
             // Deactivate IndicatorEffect
@@ -74,7 +74,7 @@ public class CheeseSize : MonoBehaviour
 
     public void ChangeSize(float change)
     {
-        //Scale
+        // Scale
         float oldSize = transform.localScale.x;
         float changedSize = oldSize + change;
         changedSize = Mathf.Clamp(changedSize, minSize, maxSize);

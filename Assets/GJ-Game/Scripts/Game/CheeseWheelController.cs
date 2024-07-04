@@ -34,31 +34,18 @@ public class CheeseWheelController : MonoBehaviour
     void Update()
     {
         // Store inputs
-        
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        /*
-        rb.velocity = verticalInput * speed * Time.deltaTime * transform.right;
-        rb.velocity = horizontalInput * speed * Time.deltaTime * transform.up;
-        */
 
         // Character Movement
         if(Input.GetAxis("Horizontal") > 0)
         {
-            //rb.AddForce(-transform.up * speed);
-            //transform.rotation.eulerAngles += rotationSpeed * horizontalInput;
-            //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
-            //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
             gimbal.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
-            //rb.AddForce(transform.up * speed);
-            //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - rotationSpeed * horizontalInput);
-            //transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
-
             gimbal.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
         }
 
@@ -78,6 +65,7 @@ public class CheeseWheelController : MonoBehaviour
             isGrounded = false;
         }
 
+        // Speedboost on Shift
         if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             speed *= speedBoostMultiplier;

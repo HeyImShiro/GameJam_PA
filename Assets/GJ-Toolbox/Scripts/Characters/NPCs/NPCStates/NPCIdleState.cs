@@ -11,14 +11,14 @@ public class NPCIdleState : BaseState
 
     public override void OnEnterState(BaseStateMachine controller)
     {
-        Debug.Log("NPCIdleState:OnEnterState");
+        // Debug.Log("NPCIdleState:OnEnterState");
 
         leaveTime = Time.time + UnityEngine.Random.Range(minWaitTime, maxWaitTime);
     }
 
     public override void OnUpdateState(BaseStateMachine controller)
     {
-        Debug.Log("NPCIdleState:OnUpdateState");
+        // Debug.Log("NPCIdleState:OnUpdateState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         // Transitions
@@ -50,7 +50,7 @@ public class NPCIdleState : BaseState
     }
      public override void OnExitState(BaseStateMachine controller)
     {
-        Debug.Log("NPCIdleState:OnExitState");
+        // Debug.Log("NPCIdleState:OnExitState");
     }
 }
 

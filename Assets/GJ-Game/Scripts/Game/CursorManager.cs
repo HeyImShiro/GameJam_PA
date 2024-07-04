@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
+    // Lock Cursor when Game is in focus
     private void OnApplicationFocus(bool focus)
     {
        if(focus)

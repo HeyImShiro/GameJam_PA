@@ -12,7 +12,7 @@ public class NPCPatrolState : BaseState
 
     public override void OnEnterState(BaseStateMachine controller)
     {
-        Debug.Log("NPCPatrolState:OnEnterState");
+        // Debug.Log("NPCPatrolState:OnEnterState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
         npcStateMachine.animator.SetBool("isWalking", true); 
 
@@ -26,7 +26,7 @@ public class NPCPatrolState : BaseState
 
     public override void OnUpdateState(BaseStateMachine controller)
     {
-        Debug.Log("NPCPatrolState:OnUpdateState");
+        // Debug.Log("NPCPatrolState:OnUpdateState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         // Transitions
@@ -62,7 +62,7 @@ public class NPCPatrolState : BaseState
     }
     public override void OnExitState(BaseStateMachine controller)
     {
-        Debug.Log("NPCPatrolState:OnExitState");
+        // Debug.Log("NPCPatrolState:OnExitState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         npcStateMachine.animator.SetBool("isWalking", false);

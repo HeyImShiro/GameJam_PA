@@ -14,12 +14,15 @@ public class GameOver : MonoBehaviour
         
     }
 
+    // Retry Game
     public void retry()
     {
         PauseScript.gameIsPaused = false;
         SceneManager.LoadScene(1);
 
     }
+
+    // Back To MainMenu
     public void LoadMenu()
     {
         PauseScript.gameIsPaused = false;
@@ -27,6 +30,7 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    // Quit Game
     public void QuitGame()
     {
         Debug.Log("Game Quit");

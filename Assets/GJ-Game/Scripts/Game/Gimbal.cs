@@ -16,8 +16,7 @@ public class Gimbal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Set Transform equal to Parents transform
         transform.position = playerTransform.position;
-        //Debug.Log(playerTransform.localEulerAngles.y);
-        //transform.eulerAngles = new Vector3(0 ,playerTransform.localEulerAngles.y ,0);
     }
 }

@@ -10,13 +10,15 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rotate
+        // Rotate...
         if(rotateY)
         {
+            // ...around Y-Axis if bool is true
             transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
         }
         else
         {
+            // ...around Z-Axis if bool is false
             transform.Rotate(Vector3.forward * Time.deltaTime * rotationSpeed);
         }
     }
